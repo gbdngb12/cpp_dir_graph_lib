@@ -180,10 +180,6 @@ std::set<T> directed_graph<T>::get_adjacent_nodes_values(const T& node_value) co
     return get_adjacent_nodes_values(iter->get_adjacent_nodes_indices());
 }
 
-template <typename T>
-size_t directed_graph<T>::size() const noexcept {
-    return m_nodes.size();
-}
 
 template <typename T>
 typename directed_graph<T>::size_type directed_graph<T>::size() const noexcept {

@@ -113,7 +113,7 @@ class directed_graph {
      *
      * @return std::size_t 방향 그래프 안의 모든 노드의 수
      */
-    [[nodiscard]] std::size_t size() const noexcept;
+    //[[nodiscard]] std::size_t size() const noexcept;
 
     /**
      * @brief 노드의 값으로 인접 행렬의 값 리스트를 가져온다.
