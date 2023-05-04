@@ -1,0 +1,246 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "graph_node",
+					"jsonFile" : "directory-graph_node-Debug-4f6742e53cc7a78a4a94.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "graph_node",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "directed_graph",
+					"jsonFile" : "directory-directed_graph-Debug-759541972ea5e117d430.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "directed_graph",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "util",
+					"jsonFile" : "directory-util-Debug-c386f56db14874d6eb16.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "util",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "directed_graph_iterator",
+					"jsonFile" : "directory-directed_graph_iterator-Debug-2456b81e2af9406e85fc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "directed_graph_iterator",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "adjacent_nodes_iterator",
+					"jsonFile" : "directory-adjacent_nodes_iterator-Debug-584564117d40536b9b09.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "adjacent_nodes_iterator",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "graph",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "graph_node",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "directed_graph",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "util",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "directed_graph_iterator",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "adjacnet_nodes_iterator",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "adjacnet_nodes_iterator::@22d9e2d06b16efbdd46f",
+					"jsonFile" : "target-adjacnet_nodes_iterator-Debug-dd0d9e0102f3ba118a5b.json",
+					"name" : "adjacnet_nodes_iterator",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "directed_graph::@91ca09c04c619d43f6f4",
+					"jsonFile" : "target-directed_graph-Debug-ba95213a62f85f1a5f8f.json",
+					"name" : "directed_graph",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "directed_graph_iterator::@fb476cb787e134c59d22",
+					"jsonFile" : "target-directed_graph_iterator-Debug-afff7e3c710511e55dad.json",
+					"name" : "directed_graph_iterator",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "graph::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-graph-Debug-eb2260931233c81ebc59.json",
+					"name" : "graph",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "graph_node::@0ee31328e82cbdcbb779",
+					"jsonFile" : "target-graph_node-Debug-f9bf11a642fcbeba1fc5.json",
+					"name" : "graph_node",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "util::@5865449b717dd869d2cd",
+					"jsonFile" : "target-util-Debug-2598e6c6ecc0f9c7377d.json",
+					"name" : "util",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dong/Downloads/devTest/c++_test/graph/build",
+		"source" : "/home/dong/Downloads/devTest/c++_test/graph"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

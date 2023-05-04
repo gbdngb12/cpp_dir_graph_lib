@@ -1,0 +1,132 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "util/libutil.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"util/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++20"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/dong/Downloads/devTest/c++_test/graph/util"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dong/Downloads/devTest/c++_test/graph/directed_graph"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dong/Downloads/devTest/c++_test/graph/graph_node"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dong/Downloads/devTest/c++_test/graph/directed_graph_iterator"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/dong/Downloads/devTest/c++_test/graph/adjacent_nodes_iterator"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "graph_node::@0ee31328e82cbdcbb779"
+		}
+	],
+	"id" : "util::@5865449b717dd869d2cd",
+	"name" : "util",
+	"nameOnDisk" : "libutil.a",
+	"paths" : 
+	{
+		"build" : "util",
+		"source" : "util"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "util/directed_graph_to_dot.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}
