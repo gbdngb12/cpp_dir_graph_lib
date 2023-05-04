@@ -17,13 +17,13 @@ directed_graph<T>::findNode(const T& node_value) const {
     return const_cast<directed_graph<T>*>(this)->findNode(node_value);
 }
 
-template <typename T>
+/*template <typename T>
 bool directed_graph<T>::insert(const T& node_value) {
     T copy{node_value};
     return insert(std::move(copy));
-}
+}*/
 
-template <typename T>
+/*template <typename T>
 bool directed_graph<T>::insert(T&& node_value) {
     auto iter{findNode(node_value)};
     if (iter != std::end(m_nodes)) {
@@ -31,7 +31,7 @@ bool directed_graph<T>::insert(T&& node_value) {
     }
     m_nodes.emplace_back(this, std::move(node_value));  // graph_node<directed_graph<T>*, T&&) 생성자 호출
     return true;
-}
+}*/
 
 template <typename T>
 std::size_t directed_graph<T>::get_index_of_node(
@@ -180,7 +180,6 @@ std::set<T> directed_graph<T>::get_adjacent_nodes_values(const T& node_value) co
     return get_adjacent_nodes_values(iter->get_adjacent_nodes_indices());
 }
 
-
 template <typename T>
 typename directed_graph<T>::size_type directed_graph<T>::size() const noexcept {
     return m_nodes.size();
@@ -203,6 +202,111 @@ template <typename T>
 typename directed_graph<T>::const_reference
 directed_graph<T>::at(size_type index) const {
     return m_nodes.at(index).value();
+}
+
+template <typename T>
+typename directed_graph<T>::iterator directed_graph<T>::begin() noexcept {
+    return iterator{std::begin(m_nodes) /*const iterator*/, this /*directed graph*/};
+}
+
+template <typename T>
+typename directed_graph<T>::iterator directed_graph<T>::end() noexcept {
+    return iterator{std::end(m_nodes) /*const iterator*/, this /*directed graph*/};
+}
+
+template <typename T>
+typename directed_graph<T>::const_iterator directed_graph<T>::begin() const noexcept {
+    return const_cast<directed_graph*>(this)->begin();
+}
+
+template <typename T>
+typename directed_graph<T>::const_iterator directed_graph<T>::end() const noexcept {
+    return const_cast<directed_graph*>(this)->end();
+}
+
+template <typename T>
+typename directed_graph<T>::const_iterator directed_graph<T>::cbegin() const noexcept {
+    return begin();
+}
+
+template <typename T>
+typename directed_graph<T>::const_iterator directed_graph<T>::cend() const noexcept {
+    return end();
+}
+
+template <typename T>
+std::pair<typename directed_graph<T>::iterator, bool>
+directed_graph<T>::insert(const T& node_value) {
+    T copy{node_value};
+    return insert(std::move(copy));
+}
+
+template <typename T>
+std::pair<typename directed_graph<T>::iterator, bool>
+directed_graph<T>::insert(T&& node_value) {
+    auto iter{findNode(node_value)};
+    if (iter != std::end(m_nodes)) {
+        // Value is already in the graph.
+        return {iterator{iter, this}, false};
+    }
+    m_nodes.emplace_back(this, std::move(node_value));
+    // Value successfully added to the graph.
+    return {iterator{--std::end(m_nodes), this}, true};
+}
+
+template <typename T>
+typename directed_graph<T>::iterator
+directed_graph<T>::insert(const_iterator hint, const T& node_value) {
+    // Ignore the hint, just forward to another insert().
+    return insert(node_value).first;
+}
+
+template <typename T>
+typename directed_graph<T>::iterator
+directed_graph<T>::insert(const_iterator hint, T&& node_value) {
+    // Ignore the hint, just forward to another insert().
+    return insert(std::move(node_value)).first;
+}
+
+template <typename T>
+template <typename Iter>
+void directed_graph<T>::insert(Iter first, Iter last) {
+    // insert_iterator 어댑터를 사용하여 범위의 각 요소를 복사합니다.
+    // begin()을 더미 위치로 지정하십시오. 삽입은 어쨌든 이를 무시합니다.
+    std::copy(first, last, std::insert_iterator{*this, begin()});
+}
+
+template <typename T>
+typename directed_graph<T>::iterator
+directed_graph<T>::erase(const_iterator pos) {
+    if (pos.m_nodeIterator == std::end(m_nodes)) {
+        return iterator{std::end(m_nodes), this};
+    }
+    remove_all_links_to(pos.m_nodeIterator);
+    return iterator{m_nodes.erase(pos.m_nodeIterator), this};
+}
+
+template <typename T>
+typename directed_graph<T>::iterator
+directed_graph<T>::erase(const_iterator first, const_iterator last) {
+    for (auto iter{first}; iter != last; ++iter) {
+        if (iter.m_nodeIterator != std::end(m_nodes)) {
+            remove_all_links_to(iter.m_nodeIterator);
+        }
+    }
+    return iterator{
+        m_nodes.erase(first.m_nodeIterator, last.m_nodeIterator), this};
+}
+
+template <typename T>
+typename directed_graph<T>::iterator directed_graph<T>::find(const T& node_value) {
+    return iterator{findNode(node_value), this};
+}
+
+template <typename T>
+typename directed_graph<T>::const_iterator
+directed_graph<T>::find(const T& node_value) const {
+    return iterator{findNode(node_value), this};
 }
 
 // 템플릿 클래스 인스턴스화

@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory("graph_node")
 add_subdirectory("directed_graph")
 add_subdirectory("util")
-#add_subdirectory("directed_graph_iterator")
+add_subdirectory("directed_graph_iterator")
 #add_subdirectory("adjacent_nodes_iterator")
 
 add_executable(${PROJECT_NAME} "main.cpp")
