@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdirected_graph_iterator.a CMakeFiles/directed_graph_iterator.dir/directed_graph_iterator.cpp.o
-/usr/bin/ranlib libdirected_graph_iterator.a

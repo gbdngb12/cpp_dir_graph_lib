@@ -1,2 +1,0 @@
-/usr/bin/ar qc libadjacnet_nodes_iterator.a CMakeFiles/adjacnet_nodes_iterator.dir/adjacnet_nodes_iterator.cpp.o
-/usr/bin/ranlib libadjacnet_nodes_iterator.a

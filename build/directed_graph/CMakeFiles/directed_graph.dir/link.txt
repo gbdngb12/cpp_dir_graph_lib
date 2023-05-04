@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdirected_graph.a CMakeFiles/directed_graph.dir/directed_graph.cpp.o
-/usr/bin/ranlib libdirected_graph.a
