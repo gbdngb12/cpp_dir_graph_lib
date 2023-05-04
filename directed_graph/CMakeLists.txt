@@ -5,8 +5,6 @@ add_library(${PROJECT_NAME} "directed_graph.cpp")
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
         graph_node
-        directed_graph_iterator
-        adjacnet_nodes_iterator
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "directed_graph.h")
