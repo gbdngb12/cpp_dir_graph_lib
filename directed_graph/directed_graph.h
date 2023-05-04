@@ -66,14 +66,14 @@ class directed_graph {
      * @param index 인덱스
      * @return T& 노드 값의 레퍼런스
      */
-    T& operator[](std::size_t index);
+    reference operator[](std::size_t index);
     /**
      * @brief 인덱스로 노드 값의 const 레퍼런스 접근
      *
      * @param index 인덱스
      * @return const T& 노드 값의 const 레퍼런스
      */
-    const T& operator[](std::size_t index) const;
+    const_reference operator[](std::size_t index) const;
 
     /**
      * @brief 두 방향 그래프가 일치하는지 확인한다.
@@ -113,6 +113,39 @@ class directed_graph {
      * @return std::set<T> 인접 행렬의 값 리스트
      */
     [[nodiscard]] std::set<T> get_adjacent_nodes_values(const T& node_value) const;
+
+    /**
+     * @brief 표준 라이브러리를 위한 타입 앨리어스
+     *
+     */
+    using value_type = T;
+    using reference = value_type&;
+    using const_reference = const value_type&;
+    using size_type = std::size_t;
+    using difference_type = std::ptrdiff_t;
+
+    /**
+     * @brief 표준 라이브러리를 위한 메서드
+     *
+     */
+    [[nodiscard]] size_type size() const noexcept;
+    [[nodiscard]] size_type max_size() const noexcept;
+    [[nodiscard]] bool empty() const noexcept;
+
+    /**
+     * @brief 표준 라이브러리를 위한 예외 처리를 하는 인덱스 접근 메서드
+     * 
+     * @param index 인덱스
+     * @return reference 노드 값의 레퍼런스
+     */
+    reference at(size_type index);
+    /**
+     * @brief 표준 라이브러리를 위한 예외 처리를 하는 인덱스 접근 메서드
+     * 
+     * @param index 인덱스
+     * @return const_reference 노드 값의 const 레퍼런스
+     */
+    const_reference at(size_type index) const;
 
    private:
     /**

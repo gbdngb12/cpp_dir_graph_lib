@@ -185,5 +185,29 @@ size_t directed_graph<T>::size() const noexcept {
     return m_nodes.size();
 }
 
+template <typename T>
+typename directed_graph<T>::size_type directed_graph<T>::size() const noexcept {
+    return m_nodes.size();
+}
+template <typename T>
+typename directed_graph<T>::size_type directed_graph<T>::max_size() const noexcept {
+    return m_nodes.max_size();
+}
+template <typename T>
+bool directed_graph<T>::empty() const noexcept {
+    return m_nodes.empty();
+}
+
+template <typename T>
+typename directed_graph<T>::reference
+directed_graph<T>::at(size_type index) {
+    return m_nodes.at(index).value();
+}
+template <typename T>
+typename directed_graph<T>::const_reference
+directed_graph<T>::at(size_type index) const {
+    return m_nodes.at(index).value();
+}
+
 // 템플릿 클래스 인스턴스화
 template class directed_graph<int>;
