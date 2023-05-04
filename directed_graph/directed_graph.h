@@ -9,6 +9,15 @@ template <typename T>
 class directed_graph {
    public:
     /**
+     * @brief 표준 라이브러리를 위한 타입 앨리어스
+     *
+     */
+    using value_type = T;
+    using reference = value_type&;
+    using const_reference = const value_type&;
+    using size_type = std::size_t;
+    using difference_type = std::ptrdiff_t;
+    /**
      * @brief 노드의 값으로 노드를 삽입한다.
      *
      * @param node_value 노드의 값
@@ -115,16 +124,6 @@ class directed_graph {
     [[nodiscard]] std::set<T> get_adjacent_nodes_values(const T& node_value) const;
 
     /**
-     * @brief 표준 라이브러리를 위한 타입 앨리어스
-     *
-     */
-    using value_type = T;
-    using reference = value_type&;
-    using const_reference = const value_type&;
-    using size_type = std::size_t;
-    using difference_type = std::ptrdiff_t;
-
-    /**
      * @brief 표준 라이브러리를 위한 메서드
      *
      */
@@ -134,14 +133,14 @@ class directed_graph {
 
     /**
      * @brief 표준 라이브러리를 위한 예외 처리를 하는 인덱스 접근 메서드
-     * 
+     *
      * @param index 인덱스
      * @return reference 노드 값의 레퍼런스
      */
     reference at(size_type index);
     /**
      * @brief 표준 라이브러리를 위한 예외 처리를 하는 인덱스 접근 메서드
-     * 
+     *
      * @param index 인덱스
      * @return const_reference 노드 값의 const 레퍼런스
      */
